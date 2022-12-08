@@ -1,9 +1,9 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client';
-import TodoList from './components/todo-list';
-import AppHeader from './components/app-header';
-import SearchPanel from './components/search-panel';
-import ItemStatusFilter from './components/item-status-filter';
+import TodoList from './components/todo-list/todo-list';
+import AppHeader from './components/app-header/app-header';
+import SearchPanel from './components/search-panel/search-panel';
+import ItemStatusFilter from './components/item-status-filter/item-status-filter';
 import './index.css'
 const container = document.getElementById('root');
 const root = createRoot(container);
