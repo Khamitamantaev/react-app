@@ -5,11 +5,6 @@ import './todo-list-item.css';
 
 export default class TodoListItem extends Component {
 
-    state = {
-        done: false,
-        important: false
-    }
-
     onLabelClick = () => {
         this.setState(({ done}) => {
             return {
@@ -28,10 +23,15 @@ export default class TodoListItem extends Component {
 
     render() {
 
-        const { label, onDeleted } = this.props;
-    
+        const { 
+            label, 
+            onDeleted,
+            onToggleImportant,
+            onToggleDone,
+            done,
+            important
+        } = this.props;
 
-        const { done, important } = this.state
         let className = 'todo-list-item'
 
         if(done) {
@@ -46,13 +46,13 @@ export default class TodoListItem extends Component {
             <span className={className}>
                 <span
                     className="todo-list-item-label"
-                    onClick={this.onLabelClick}
+                    onClick={ onToggleDone }
                     >
                     {label}
                 </span>
                 <div style={{ textAlign: 'right' }}>
                     <button type="button"
-                        className="btn btn-outline-success btn-sm float-right" onClick={this.onMark}>
+                        className="btn btn-outline-success btn-sm float-right" onClick={onToggleImportant}>
                         <i className="fa fa-exclamation" />
                     </button>
 
