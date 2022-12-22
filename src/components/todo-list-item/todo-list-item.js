@@ -5,22 +5,6 @@ import './todo-list-item.css';
 
 export default class TodoListItem extends Component {
 
-    onLabelClick = () => {
-        this.setState(({ done}) => {
-            return {
-                done: !done
-            }
-        })
-    }
-
-    onMark = () => {
-        this.setState(({important}) => {
-            return {
-                important: !important
-            }
-        })
-    }
-
     render() {
 
         const { 
